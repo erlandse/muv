@@ -1,0 +1,103 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "gjenstand": {
+      "properties": {
+        "fagmiljøer": {
+          "type": "keyword",
+          "store": true
+        },
+        "emneSti": {
+          "type": "keyword",
+          "store": true
+        },
+        "textcontainer":{
+          "type":"text",
+          "fielddata": true,          
+          "analyzer":"standard"
+        },
+        "fotos": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "produksjonsstempel":{
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "tillegg_historie": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "fra_dato": {
+          "type": "keyword",
+          "store": true
+        },
+        "gjenstandid": {
+          "type": "integer"
+        },
+        "gjenstandsbeskrivelse": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "gjenstandsnavn": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "gjenstandstyper": {
+          "type": "keyword",
+          "store": true
+        },
+        "dokumentasjon": {
+          "type": "keyword",
+          "store": true
+        },
+        "hendelser": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "id": {
+          "type": "keyword",
+          "store": true
+        },
+        "koblinger": {
+          "type": "keyword",
+          "store": true
+        },
+        "museumsid": {
+          "type": "keyword",
+          "store": true
+        },
+        "museumsnummer": {
+          "type": "integer"
+        },
+            "hasPhoto": {
+           "type": "integer"
+        },
+        "museumKey": {
+          "type": "keyword",
+          "store": true
+        },
+        "produsenter": {
+          "type": "text",
+          "analyzer": "norwegian"
+        },
+        "til_dato": {
+          "type": "keyword",
+          "store": true
+        },
+        "undernummer": {
+          "type": "integer"
+        },
+        "utviklere": {
+          "type": "text",
+          "analyzer": "norwegian"
+        }
+      }
+    }
+  }
+}

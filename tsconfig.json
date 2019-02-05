@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "outDir": "./built",
+        "allowJs": true,
+        "target": "es5"
+    },
+    "files": [
+        "./src/ElasticClass.ts",
+        "./src/tools.ts",
+        "./src/gjenstand.ts",
+        "./src/main.ts",
+        "./src/JsonTool.ts",
+        "./src/agg.ts",
+        "./src/wheel.ts"
+    ]
+}

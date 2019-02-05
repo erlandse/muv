@@ -1,0 +1,36 @@
+1) Først sletttes evt gammelt indeks. 
+Dette kan ske fra http://itfds-prod03.uio.no/es/
+Hvis muv3 skal slettes:
+I URL skrives localhost:9200/muv3
+I kodet-tekstfeltet skrives 'sidse' (uden apostroffer)
+og så trykker man på knappen 'slet index'
+
+2) Man opretter et nyt indeks i es fra filen muv_index.json.
+Den ligger på:
+itfds-utv01/var/www/html/morten/muv/muv_index.json
+Indholdet kopieres og pastes over i
+http://itfds-prod03.uio.no/es/
+I URL skrives localhost:9200/muv3
+hvor muv3 angiver det nye indeks navn.
+Så trykker man på knappen push og indekset er oprettet
+
+3) Man læser den tab-separerede fil ind og lagrer den i UTF-8 format (den kommer i windows tegnsæt)
+http://itfds-utv01.uio.no/morten/muvload/
+I indeks-tekst-feltet skrives indeks-navnet f.eks muv3
+Så trykker man på knappen "Start upload"
+
+
+4)Til sidst skal elasticsearch pege på det nye index, og det sker med _aliases
+I eksemplet nedenfor fjernes pegeren for indekset muv og runmuv sættes til at pege på muv2
+
+POST /_aliases
+{
+    "actions" : [
+        { "remove" : { "index" : "muv", "alias" : "runmuv" } },
+        { "add" : { "index" : "muv2", "alias" : "runmuv" } }
+    ]
+}
+
+
+
+

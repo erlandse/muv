@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!--meta name="viewport" content="width=device-width,initial-scale=1.0"/-->
+  
+  <title>MUV gjenstandsportal</title>
+ 
+ 
+  <!--link href="all.css" type="text/css" rel="stylesheet"/-->
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="ElasticClass.js"></script>
+  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+  <script type="text/javascript" charset="utf-8" src="tools.js"></script>
+  <script type="text/javascript" charset="utf-8" src="JsonTool.js"></script>
+  <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+  <script type="text/javascript" charset="utf-8" src="agg.js"></script>
+  <script type="text/javascript" charset="utf-8" src="wheel.js"></script>
+
+  <link href="https://app.uio.no/hf/ft/wheel/wordwheel.css" type="text/css" rel="stylesheet"/>
+  <link href="uio-app-top-bottom.css" type="text/css" rel="stylesheet" media="screen, print" />
+</head>
+
+<body onload='mainInitialize()' onresize='resize()'>
+<div  id='gridContainer' class='gridContainer'>
+
+<div id='topHeader' class='topHeader'> 
+
+<div><!--wrapper for at oppheve flexbox-->
+
+
+<div id="app-head-wrapper"> 
+  <div id="line-top">
+      <div class="uio-app-line-top">
+            <div class="uio-logo">
+                <a href="http://www.uio.no/" style='text-decoration:none;' >UiO</a>
+                <img src='images/uio-app-colon2.png'  height='12px'/>
+                <a href="https://www.muv.uio.no/"tabindex="-1" style='text-decoration:none;'> Museum for universitets- og vitenskapshistorie</a>
+            </div>
+       </div>
+  </div>
+  <div id="app-head">
+    <div id="app-name"> 
+      <a href='https://nabu.usit.uio.no/khm/muv/gjenstand/'>Universitetshistorisk gjenstandsbase</a> 
+      <span id="tagline"></span>
+    </div>
+</div> 
+
+</div>
+</div><!--slut wrapper-->  
+</div><!--topheader-->
+
+<div id='mainContent' class='mainContent'>
+  <div id='navigationDiv' class='navigationDiv'>
+    <div class='searchPartDiv'>
+      <span style='vertical-align:middle;margin-left:10px;'>Søk:</span>
+      <br>
+      <span style='vertical-align:middle;margin-left:10px;'><input  style='vertical-align:middle' type='text' onkeyup='changeWordwheel(event)'  id='inputField'/>
+      <a href='javascript:search()'><img src='search.png' width='16px' style='border-style:outset;vertical-align:text-top;background-color:#FFFFFF'></img></a></span>
+      <br>
+      <br> 
+      <span style='text-align:left;margin-left:10px;'>Gjenstandstype:<br></span>
+      <span style='text-align:left;margin-left:10px;'><select id='keywordList' onChange='insertKeyword()' size='1'></select></span>
+      <br>
+    </div> 
+    <div class='topicDiv'>
+       <table id='navigationTable' style='text-align:left;margin-left:10px;'>
+       </table>   
+    </div>   
+  </div>
+  <div id='contentDiv' class='contentDiv'>
+     <div id='resultDiv' class='resultDiv'>
+        <table id='resultTable' style='width:100%;height:100%;'>
+        </table>    
+     </div>  
+     <div id='traverseDiv' class='traverseDiv'>
+        <table id='traverseTable'>
+        <tr>
+        <td><input type='button' id='zeroButtonId' value='Nullstill' onclick='setToZero()'></td>
+        <td><input type='button' id='prevButtonId' value='Forrige' onclick='move(-1)'></td>
+        <td><input type='button' id='nextButtonId' value='Neste' onclick='move(1)'></td>
+        <td><span id='traversalLabel' class='label'></span></td>
+        </tr>    
+        </table>
+     </div>  
+  </div>
+</div>
+
+<div>
+
+<div id="app-footer-wrapper"> 
+  <div id="app-footer">
+    <div id="app-responsible"> 
+      <span class="vrtx-label">Responsible for this service</span> 
+      <span ><a style="color:blue;" target='_blank' href="http://www.usit.uio.no/english/about/organisation/bps/rc/">Department for Research Computing</a></span> 
+      <span>Data Capture and Collections Management Group</span> 
+    </div>
+  </div> 
+</div>
+
+
+</div>
+
+</div> <!--gridcontainer-->
+
+<!-- Page footer end -->
+<div id="wordwheel_div"> <ul id= 'ul' class='wordwheel'>
+  </ul> </div>
+</body>
+</html>
